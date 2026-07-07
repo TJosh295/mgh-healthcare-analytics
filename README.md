@@ -13,6 +13,7 @@ This project provides an end-to-end data analysis of historical patient records 
 
 ## 📐 Phase 1: Analytical SQL Queries
 Before building visuals, the database logic and key metrics were validated inside MySQL Workbench using precise time-interval logic.
+![SQL Workbench Queries](Project%202%20Query.png)
 
 ### 1. Patient Admissions & Readmissions Over Time
 *Identified historical patterns and sequential visits utilizing SQL window functions.*
@@ -70,6 +71,7 @@ After standardizing the relational backend, the live local MySQL server instance
 3. **DAX Measure Engineering:** Formulated dedicated metrics to populate high-level dashboard elements dynamically:
    * **Average Stay Duration:** 
      `Avg Stay Hours = AVERAGEX('hospital_db encounters', DATEDIFF('hospital_db encounters'[START], 'hospital_db encounters'[STOP], MINUTE) / 60.0)`
+![Power BI Star Schema Model](Project%202%20Data%20Model.png)
    * **Subsidized Performance:** 
      `Procedures Covered = CALCULATE(COUNT('hospital_db procedures'[CODE]), 'hospital_db encounters'[PAYER_COVERAGE] > 0)`
 
@@ -78,5 +80,7 @@ After standardizing the relational backend, the live local MySQL server instance
 ## 💡 Executive Insights & Strategic Outcomes
 * **Operational Volumes:** The hospital successfully managed **27.891K total admissions** over the tracked timeline. Patient volumes peaked heavily during the 2019–2020 period before stabilizing, highlighting critical historical surge periods.
 * **Bed & Care Efficiency:** Across all clinical departments, the global average length of a hospital stay stands tightly at **7.27 hours**, heavily influenced by rapid-turnaround wellness checkups and urgent care operations.
-* **Financial Footprint:** Inpatient treatments present a vastly disproportionate cost footprint relative to alternative clinical classes. However, out-of-pocket patient risk remains low for everyday procedures, as the overarching majority of medical practices are absorbed seamlessly by insurance infrastructure.
-*
+* **Financial Footprint:** Inpatient treatments present a vastly disproportionate cost footprint relative to alternative clinical classes. However, out-of-pocket patient risk remains low for everyday procedures, as the overarching majority of medical practices  are absorbed seamlessly by insurance infrastructurabsorbed seamlessly by insurance infrastructure.
+*## 🖥️ Dashboard Visualization
+## 🖥️ Dashboard Visualization
+![Dashboard Workspace](Project%202%20Dashboard.png)
